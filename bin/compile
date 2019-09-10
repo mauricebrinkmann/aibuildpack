@@ -14,6 +14,8 @@ WGET=$(which wget)
 CONDA_HOME="$1/.conda"
 CONDA_BIN="$CONDA_HOME/bin"
 
+AI_HOME="$1/.ai"
+
 if [ ! -e "$ROOT/conda_runtime.txt" ]; then
 	MINICONDA_FILE="Miniconda-latest-Linux-x86_64.sh"
 else
@@ -44,18 +46,27 @@ if [ -e "$ROOT/requirements.txt" ]; then
     echo "-----> Installing additional requirements using pip..."
 	$CONDA_BIN/pip install -r "$ROOT/requirements.txt"
 fi
-#
-echo "-----> Changing hardcoded paths..."
+
+echo "-----> Packaging AI features..."
+cp -r $BUILDPACK_PATH/api $AI_HOME/api
+echo "       ..."
+echo "       ..."
+echo "       ..."
+echo "       DONE!"
+
+#echo "-----> Changing hardcoded paths..."
 grep -rlI $ROOT . | xargs sed -i.bak "s|$ROOT|.|g"
 
-echo "-----> Packaging AI features"
-cp -r $BUILDPACK_PATH/api $CACHE/api
-echo "=====> pwd: '$(pwd)'"
-find $pwd
-echo "=====> BUILDPACK_PATH: '$BUILDPACK_PATH'"
-ls $BUILDPACK_PATH
-echo "=====> ROOT: '$ROOT'"
-ls $ROOT
-echo "=====> CACHE: '$CACHE'"
-ls $CACHE
+# echo "-----> Debugging Paths for AI features"
+# echo "=====> AI_HOME: '$AI_HOME'"
+# find $AI_HOME
+# echo "=====> pwd: '$(pwd)'"
+# find $pwd
+# echo "=====> BUILDPACK_PATH: '$BUILDPACK_PATH'"
+# ls $BUILDPACK_PATH
+# echo "=====> ROOT: '$ROOT'"
+# ls $ROOT
+# echo "=====> CACHE: '$CACHE'"
+# ls $CACHE
+
 echo "-----> Finished compile step"
