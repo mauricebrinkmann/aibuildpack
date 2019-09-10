@@ -8,5 +8,5 @@ ROOT=$1
 
 echo "
 default_process_types:
-  web: $ROOT/.conda/bin/python $ROOT/api/server.py
+  web: ./.conda/bin/python $ROOT/api/server.py
 "
