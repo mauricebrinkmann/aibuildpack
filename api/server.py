@@ -10,7 +10,7 @@ prediction = ""
 aijson = ""
 
 @app.route("/model")
-def hello():
+def model():
     return json.dumps(aijson)
 
 @app.route("/health")
