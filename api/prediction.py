@@ -19,5 +19,5 @@ class Prediction:
     # (must be in the same format as the input data!!!)
     new_data = pd.DataFrame(input)
     # make prediction of new data
-    target = reg.predict(new_data)
+    target = self.reg.predict(new_data)
     return target
