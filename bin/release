@@ -4,8 +4,9 @@
 #
 # Licensed under the MIT License
 #
+ROOT=$1
 
 echo "
 default_process_types:
-  web: export FLASK_APP=./api/server.py;./.conda/bin/python -m flask run --port \$PORT
+  web: ./.conda/bin/python $ROOT/api/server.py
 "
