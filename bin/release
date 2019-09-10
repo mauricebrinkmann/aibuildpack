@@ -4,8 +4,6 @@
 #
 # Licensed under the MIT License
 #
-ROOT=$1
-CACHE=$2
 
 echo "
 default_process_types:

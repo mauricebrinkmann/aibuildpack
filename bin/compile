@@ -37,7 +37,15 @@ $MINICONDA_CACHE -b -p $CONDA_HOME #&> /dev/null
 echo "-----> Installing Dependencies..."
 $CONDA_BIN/conda update --yes --quiet conda #&> /dev/null
 $CONDA_BIN/conda install --yes --quiet pip #&> /dev/null
+
+echo " "
+echo "-----> Installing AI Dependencies..."
 $CONDA_BIN/pip install -U Flask
+$CONDA_BIN/pip install wheel
+$CONDA_BIN/pip install -U pandas
+$CONDA_BIN/pip install -U scikit-learn 
+ 
+
 if [ -e "$ROOT/requirements.txt" ]; then
     echo "-----> Installing additional requirements using conda..."
 	while read p; do 
@@ -47,7 +55,7 @@ if [ -e "$ROOT/requirements.txt" ]; then
 	$CONDA_BIN/pip install -r "$ROOT/requirements.txt"
 fi
 
-echo "-----> Packaging AI features..."
+echo "-----> Packaging AI Features..."
 mkdir -p $AI_HOME
 cp -r $BUILDPACK_PATH/api $AI_HOME/
 echo "       ..."
