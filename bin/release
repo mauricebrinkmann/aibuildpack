@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Cloud Foundry AI Buildpack
+# Copyright (c) 2019 DanielWunder, MauriceBrinkmann, SebestyenMiklos
+#
+# Licensed under the MIT License
+#
+
+echo "
+default_process_types:
+  web: env FLASK_APP=server.py ./.conda/bin/flask run --port \$PORT
+"
