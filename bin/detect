@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Cloud Foundry AI Buildpack
+# Copyright (c) 2019 DanielWunder, MauriceBrinkmann, SebestyenMiklos
+#
+# Licensed under the MIT License
+#
+ROOT=$1
+
+HAS_FILES=$(find $ROOT -depth 1 -name 'ai.json' | wc -l)
+
+if [ "$HAS_FILES" -gt "0" ]; then
+	echo "aibuildpack"
+	exit 0
+else
+	exit 1
+fi
