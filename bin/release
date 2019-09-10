@@ -7,5 +7,5 @@
 
 echo "
 default_process_types:
-  web: export FLASK_APP=./api/server.py;./.conda/bin/python -m flask run --port \$PORT
+  web: ./.conda/bin/python ./api/server.py
 "
