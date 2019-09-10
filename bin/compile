@@ -34,7 +34,7 @@ $MINICONDA_CACHE -b -p $CONDA_HOME #&> /dev/null
 echo "-----> Installing Dependencies..."
 $CONDA_BIN/conda update --yes --quiet conda #&> /dev/null
 $CONDA_BIN/conda install --yes --quiet pip #&> /dev/null
-$CONDA_BIN/pip install -U Flask
+$CONDA_BIN/pip install Flask
 if [ -e "$ROOT/requirements.txt" ]; then
     echo "-----> Installing additional requirements using conda..."
 	while read p; do 
