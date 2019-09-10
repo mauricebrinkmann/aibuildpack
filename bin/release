@@ -7,5 +7,5 @@
 
 echo "
 default_process_types:
-  web: ./.conda/bin/python ./.ai/api/server.py
+  web: ./.conda/bin/python ./.ai/api/server.py <./ai.json
 "

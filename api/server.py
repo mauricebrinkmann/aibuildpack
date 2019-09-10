@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 from flask import Flask
 from flask import request
@@ -6,6 +7,11 @@ from prediction import Prediction
 
 app = Flask(__name__)
 prediction = ""
+aijson = ""
+
+@app.route("/model")
+def hello():
+    return json.dumps(aijson)
 
 @app.route("/health")
 def hello():
@@ -15,14 +21,15 @@ def hello():
 def new_data():
     # CODE
     req = request.get_data()
-    j = json.loads(req)
-    pred = prediction.get_prediction()
+    input = json.loads(req)
+    target = prediction.get_prediction(input)
     return {
-        "prediction" : str(pred)
+        "prediction" : json.dumps(target)
     }
 
 if __name__ == "__main__":
-    prediction = Prediction()
+    aijson = json.load(sys.stdin)
+    prediction = Prediction(aijson)
     if os.environ.get('VCAP_SERVICES') is None: # running locally
         PORT = 8080
         DEBUG = True
