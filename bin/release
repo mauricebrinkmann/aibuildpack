@@ -9,5 +9,5 @@ CACHE=$2
 
 echo "
 default_process_types:
-  web: ./.conda/bin/python $CACHE/api/server.py
+  web: ./.conda/bin/python ./.ai/api/server.py
 "
