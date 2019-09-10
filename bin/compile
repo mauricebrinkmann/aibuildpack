@@ -50,5 +50,12 @@ grep -rlI $ROOT . | xargs sed -i.bak "s|$ROOT|.|g"
 
 echo "-----> Packaging AI features"
 cp -r $BUILDPACK_PATH/api $CACHE/api
-
+echo "=====> pwd: '$(pwd)'"
+find $pwd
+echo "=====> BUILDPACK_PATH: '$BUILDPACK_PATH'"
+ls $BUILDPACK_PATH
+echo "=====> ROOT: '$ROOT'"
+ls $ROOT
+echo "=====> CACHE: '$CACHE'"
+ls $CACHE
 echo "-----> Finished compile step"
