@@ -4,8 +4,9 @@
 #
 # Licensed under the MIT License
 #
+ROOT=$1
 
 echo "
 default_process_types:
-  web: ./.conda/bin/python ./api/server.py
+  web: $ROOT/.conda/bin/python $ROOT/api/server.py
 "
