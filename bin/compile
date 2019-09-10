@@ -7,6 +7,7 @@
 echo "-----> Starting compile step..."
 ROOT=$1
 CACHE=$2
+BUILDPACK_PATH=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
 
 BASH=$(which bash)
 WGET=$(which wget)
@@ -46,5 +47,8 @@ fi
 #
 echo "-----> Changing hardcoded paths..."
 grep -rlI $ROOT . | xargs sed -i.bak "s|$ROOT|.|g"
+
+echo "-----> Packaging AI features"
+cp -r $BUILDPACK_PATH/api $CACHE/api
 
 echo "-----> Finished compile step"
