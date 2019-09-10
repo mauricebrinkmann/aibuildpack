@@ -5,8 +5,9 @@
 # Licensed under the MIT License
 #
 ROOT=$1
+CACHE=$2
 
 echo "
 default_process_types:
-  web: ./.conda/bin/python $ROOT/api/server.py
+  web: ./.conda/bin/python $CACHE/api/server.py
 "
