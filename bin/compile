@@ -48,7 +48,8 @@ if [ -e "$ROOT/requirements.txt" ]; then
 fi
 
 echo "-----> Packaging AI features..."
-cp -r $BUILDPACK_PATH/api $AI_HOME/api
+mkdir -p $AI_HOME
+cp -r $BUILDPACK_PATH/api $AI_HOME/
 echo "       ..."
 echo "       ..."
 echo "       ..."
