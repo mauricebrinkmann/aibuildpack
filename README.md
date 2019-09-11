@@ -1,7 +1,7 @@
 # aibuildpack
-CFAI Buildpack: Enable Cloud Foundry Artificial Intelligence Project Support
-A Hackathon Project at the Cloud Foundry Summit 2019 The Hague
-Copyright (c) 2019 DanielWunder, MauriceBrinkmann, SebestyenMiklos
+CFAI Buildpack: Enable Cloud Foundry Artificial Intelligence Project Support  
+A Hackathon Project at the Cloud Foundry Summit 2019 The Hague  
+Copyright (c) 2019 DanielWunder, MauriceBrinkmann, SebestyenMiklos  
 
 
 ## Usage with example project
