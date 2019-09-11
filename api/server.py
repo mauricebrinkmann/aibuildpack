@@ -24,7 +24,7 @@ def new_data():
     input = json.loads(req)
     target = prediction.get_prediction(input)
     return {
-        "prediction" : json.dumps(target.tolist())
+        "prediction" : target.tolist()
     }
 
 if __name__ == "__main__":
