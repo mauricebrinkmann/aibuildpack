@@ -70,13 +70,12 @@ Returns:
    
 ```BASH
 # Check the model by predicting some other values
-curl -X POST -d '{ "input 1": [ 1, 1.5, 3 ], "input 2": [ 0.4, 0.5, 0.7 ] }' https://ai.example.com
+curl -X POST -d '{ "input 1": [ 1.5, 3 ], "input 2": [ 0.5, 0.7 ] }' https://ai.example.com
 ```
 Returns:  
 ```JSON
 {
     "prediction": [
-        9.999999999999957,
         14.999999999999973,
         30.000000000000007
     ]
