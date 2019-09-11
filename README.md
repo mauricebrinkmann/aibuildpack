@@ -14,9 +14,9 @@ cf push
   
 ## General Usage  
 ```BASH
-1. mkdir myAIproject
-2. cd myAIproject
-3. vi ai.json
+mkdir myAIproject
+cd myAIproject
+vi ai.json
 ```
 ```JSON
 {
@@ -29,7 +29,9 @@ cf push
     "target" : "target"
 }
 ```
-3. cf push ai -b https://github.com/mauricebrinkmann/aibuildpack.git
+```BASH
+cf push ai -b https://github.com/mauricebrinkmann/aibuildpack.git
+```
   
 Note: You can change the name of the inputs and the target within the "data" set, as long as you reference those names with the "input" and "target" fields:
 ```JSON
